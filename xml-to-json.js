@@ -30,7 +30,7 @@ oscServer.on('fetch', function (url) {
             let parser = xml2js.Parser();
 
             parser.parseString(data, (err, result)=>{
-                
+
                 console.log();
 
                 payload = {
@@ -46,9 +46,10 @@ oscServer.on('fetch', function (url) {
                         if (err) {
                           console.error(new Error(err));
                         }
-                        
+                    client.send('done', 'bang');
                       });
                     }
+
                 }
 
 
